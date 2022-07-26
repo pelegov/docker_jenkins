@@ -10,7 +10,7 @@ pipeline {
       steps {
         script {
            dockerImage = docker.build registry + ":$BUILD_NUMBER"
-           docker.withRegistry('', registryCredential) {
+           docker.withRegistry('getuser', registryCredential) {
            dockerImage.push()
         }
       }
