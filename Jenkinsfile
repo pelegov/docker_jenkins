@@ -1,6 +1,6 @@
 pipeline {
   environment {
-  registry = "pelegov/docker_jenkins"
+  registry = "pelegov/getuser"
   registryCredential = 'docker_hub_pelegov'
   dockerImage = ''
 }
@@ -10,7 +10,7 @@ pipeline {
       steps {
         script {
            dockerImage = docker.build registry + ":$BUILD_NUMBER"
-           docker.withRegistry('getuser', registryCredential) {
+           docker.withRegistry('', registryCredential) {
            dockerImage.push()
         }
       }
