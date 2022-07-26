@@ -10,7 +10,7 @@ pipeline {
       steps {
         script {
            dockerImage = docker.build registry + ":$BUILD_NUMBER"
-           docker.withRegistry('', registryCredential) {
+           docker.withRegistry('https://github.com/pelegov/docker_jenkins', registryCredential) {
            dockerImage.push()
         }
       }
