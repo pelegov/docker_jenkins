@@ -1,6 +1,6 @@
 pipeline {
   environment {
-  registry = "https://github.com/pelegov/docker_jenkins"
+  registry = "pelegov/getuser"
   registryCredential = 'docker_hub_pelegov'
   dockerImage = ''
 }
