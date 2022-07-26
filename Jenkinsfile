@@ -1,6 +1,6 @@
 pipeline {
   environment {
-  registry = "pelegov/getuser"
+  registry = "pelegov/docker_jenkins"
   registryCredential = 'docker_hub_pelegov'
   dockerImage = ''
 }
@@ -17,7 +17,7 @@ pipeline {
     }
     post {
     always {
-      sh "docker rmi $registry"
+      sh "docker rmi $registry:$BUILD_NUMBER"
 }
 }
 }
