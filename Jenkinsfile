@@ -11,7 +11,7 @@ pipeline {
         script {
              properties([pipelineTriggers([pollSCM('H/30 * * * *')])])
             }
-            git branch: 'main', url:'https://github.com/pelegov/docker_jenkins'
+            git branch: 'main', url:'https://github.com/pelegov/docker_jenkins/dockerfile'
         }
     }
     stage('build and push image') {
