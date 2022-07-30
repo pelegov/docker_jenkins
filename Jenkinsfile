@@ -24,12 +24,11 @@ pipeline {
         }
       }
     }
-    }
     post {
     always {
       echo $dockerimage
       sh "docker rmi $registry:$build_number"
 }
-}
+    }}
 }
 }
