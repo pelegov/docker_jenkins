@@ -1,4 +1,5 @@
 pipeline {
+  agent any
   environment {
   registry = "pelegov/getuser"
   registryCredential = 'docker_hub_pelegov'
