@@ -5,6 +5,7 @@ pipeline {
   registryCredential = 'docker_hub_pelegov'
   dockerImage = ''
  }
+  stages{
     stage('build and push image') {
       steps {
         script {
