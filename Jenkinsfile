@@ -29,7 +29,10 @@ pipeline {
     always {
       echo $dockerimage
       sh "docker rmi $registry:$build_number"
+<<<<<<< HEAD
+=======
 }
-}
+    }}
+>>>>>>> 5d4846b000d8a23e2189263118bef4ac118badc9
 }
 }
