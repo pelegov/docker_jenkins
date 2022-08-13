@@ -53,8 +53,31 @@ pipeline {
                     dockerImage = docker.build registry + ":$BUILD_NUMBER"
                     docker.withRegistry('dockerfile', registryCredential) {
                     dockerImage.push()
+                    }
                 }
             }
+        }
+        stage('Prune Docker data') {
+            steps {
+                sh 'docker system prune -a --volumes -f'
+            }
+        }
+        stage('start container') {
+            steps {
+                sh 'docker compose up -d --no-color --wait'
+                sh 'docker compose ps'
+            }
+        }
+        stage('run tests against the container') {
+            steps {
+                sh 'curl locakhost:5000/param?query=demo | jq'
+            }
+        }
+    }
+    post {
+        always {
+            sh 'docker compose down'
+            sh 'docker compose ps'
         }
     }
 }
