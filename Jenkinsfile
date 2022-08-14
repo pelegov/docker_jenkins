@@ -21,9 +21,9 @@ pipeline {
             }
         }
     }
-    environment {
-    registry = "pelegov/dockercompose"
-    registryCredential = "docker_hub_pelegov"
-    dockerImage = ''
+environment {
+registry = "pelegov/dockercompose"
+registryCredential = "docker_hub_pelegov"
+dockerImage = ''
     }
 }  
