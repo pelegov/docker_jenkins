@@ -16,5 +16,10 @@ pipeline {
                     }
                 }
             }
-        }
-    }
+        stage('run back_end_testing') {
+            steps {
+                script {
+                        sh 'nohup python3 backend_testing.py &'
+                    }
+                }
+            }
