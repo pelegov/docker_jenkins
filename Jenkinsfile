@@ -17,18 +17,3 @@ pipeline {
                 }
             }
         }
-        stage('run back_end_testing') {
-            steps {
-                script {
-                        sh 'python3 backend_testing.py'
-                    }
-                }
-            }
-        }
-        stage('run clean_environment') {
-            steps {
-                script {
-                        sh 'python3 clean_environment.py'
-                    }
-                }
-            }
