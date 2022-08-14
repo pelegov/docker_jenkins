@@ -3,7 +3,7 @@ pipeline {
     environment {
     registry = "pelegov/dockercompose"
     registryCredential = "docker_hub_pelegov"
-}
+    dockerImage = ''
     }
     stages {
         stage('git_connect') {
@@ -80,3 +80,4 @@ pipeline {
             sh 'docker compose ps'
         }
     }
+}
