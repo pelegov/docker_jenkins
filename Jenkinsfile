@@ -70,7 +70,7 @@ pipeline {
         }
         stage('run tests against the container') {
             steps {
-                sh 'curl locakhost:5000/param?query=demo | jq'
+                sh 'curl localhost:5000/param?query=demo | jq'
             }
         }
     }
