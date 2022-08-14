@@ -4,7 +4,7 @@ pipeline {
         stage('git_connect') {
             steps {
                 script {
-                    properties([pipelineTriggers([pollSCM('H/30 * * * *')])])
+                    properties([pipelineTriggers([pollSCM('* * * * *')])])
                 }
                 git branch: 'main', url: 'https://github.com/pelegov/docker_jenkins.git'
             }
