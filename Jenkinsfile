@@ -1,10 +1,5 @@
 pipeline {
     agent any
-    environment {
-    registry = "pelegov/dockercompose"
-    registryCredential = "docker_hub_pelegov"
-    dockerImage = ''
-    }
     stages {
         stage('git_connect') {
             steps {
@@ -25,5 +20,10 @@ pipeline {
                 }
             }
         }
+    }
+    environment {
+    registry = "pelegov/dockercompose"
+    registryCredential = "docker_hub_pelegov"
+    dockerImage = ''
     }
 }  
