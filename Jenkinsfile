@@ -26,7 +26,7 @@ pipeline {
         stage('run clean_environment') {
             steps {
                 script {
-                    sh 'python3 clean_environment.py'
+                        sh 'python3 clean_environment.py'
                     }
                 }
             }
