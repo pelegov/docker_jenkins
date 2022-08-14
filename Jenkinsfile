@@ -16,7 +16,6 @@ pipeline {
                     }
                 }
             }
-        }
         stage('run back_end_testing') {
             steps {
                 script {
