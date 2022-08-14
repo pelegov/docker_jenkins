@@ -21,9 +21,4 @@ pipeline {
             }
         }
     }
-environment {
-registry = "pelegov/dockercompose"
-registryCredential = "docker_hub_pelegov"
-dockerImage = ''
-    }
 }  
