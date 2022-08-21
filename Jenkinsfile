@@ -3,7 +3,7 @@ pipeline {
     environment {
     registry = "pelegov/dockercompose"
     registryCredential = "docker_hub_pelegov"
-    dockerImage = ''
+    dockerImage = file:\\''
     }
     stages {
         stage('git_connect') {
