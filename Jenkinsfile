@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-    registry = "pelegov/dockercompose/v2"
+    registry = "pelegov/dockercompose"
     registryCredential = "docker_hub_pelegov"
     dockerImage = ''
     }
@@ -39,7 +39,7 @@ pipeline {
             steps {
                 script {
                     dockerImage = docker.build registry + ":$BUILD_NUMBER"
-                    docker.withRegistry('file://dockerfile', registryCredential) {
+                    docker.withRegistry('file://v2/dockerfile', registryCredential) {
                     dockerImage.push()
                     }
                 }
