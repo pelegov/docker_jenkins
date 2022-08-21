@@ -35,5 +35,14 @@ pipeline {
                     }
                 }
             }
+        stage('run build_and_push_image') {
+            steps {
+                script {
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                    docker.withRegistry('dockerfile', registryCredential) {
+                    dockerImage.push()
+                    }
+                }
+            }   
         }
     }
