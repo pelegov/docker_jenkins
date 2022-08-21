@@ -45,5 +45,10 @@ pipeline {
                 }
             }   
         }
+        stage('prune docker data') {
+            steps {
+                sh 'docker system prune -a --volume -f'
+            }
+        }    
     }
 }
