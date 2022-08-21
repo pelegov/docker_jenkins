@@ -3,7 +3,7 @@ pipeline {
     environment {
     registry = "pelegov/dockercompose"
     registryCredential = "docker_hub_pelegov"
-    dockerImage = file:\\''
+    dockerImage = ''
     }
     stages {
         stage('git_connect') {
@@ -39,7 +39,7 @@ pipeline {
             steps {
                 script {
                     dockerImage = docker.build registry + ":$BUILD_NUMBER"
-                    docker.withRegistry('dockerfile', registryCredential) {
+                    docker.withRegistry('', registryCredential) {
                     dockerImage.push()
                     }
                 }
