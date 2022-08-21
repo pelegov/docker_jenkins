@@ -3,5 +3,5 @@ ADD . /code
 WORKDIR /code
 RUN pip install flask
 EXPOSE 5000
-RUN chmod 644 app.py
+RUN chmod 644 rest_app.py
 CMD ["python3", "rest_app.py"]
