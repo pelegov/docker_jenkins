@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-    registry = "https://hub.docker.com/repository/docker/pelegov/dockercompose"
+    registry = "registry.hub.docker.com/repository/docker/pelegov/dockercompose"
     registryCredential = "docker_hub_pelegov"
     dockerImage = ''
     }
