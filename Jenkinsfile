@@ -52,14 +52,6 @@ pipeline {
                     sh 'docker compose ps'
                 }    
             }
-        }
-        post {
-            always {
-                script {
-                    sh 'docker compose down'
-                    sh 'docker compose ps'
-                }
-            }
-        }    
+        }  
     }
 }
