@@ -47,7 +47,7 @@ pipeline {
         }
         stage('start container') {
             steps {
-                script{
+                script {
                     sh 'docker compose up -d --no-color --wait'
                     sh 'docker compose ps'
                 }    
@@ -55,8 +55,10 @@ pipeline {
         }
         post {
             always {
-                sh 'docker compose down'
-                sh 'docker compose ps'
+                script {
+                    sh 'docker compose down'
+                    sh 'docker compose ps'
+                }
             }
         }    
     }
