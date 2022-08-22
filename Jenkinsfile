@@ -45,9 +45,16 @@ pipeline {
                 }
             }   
         }
-        stage('prune docker data') {
+        stage('start container') {
             steps {
-                sh 'docker system prune -a --volume -f'
+                sh 'docker compose up -d --no-color --wait'
+                sh 'docker compose ps'
+            }
+        }
+        post {
+            always {
+                sh 'docker compose down'
+                sh 'docker compose ps'
             }
         }    
     }
