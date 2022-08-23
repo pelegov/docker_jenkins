@@ -59,7 +59,7 @@ def current_time():
 
 @app.route('/stop_server')
 def stop_server():
-    os.kill(os.getpid(), signal.CTRL_C_EVENT)
+    os.kill(os.getpid(), signal.SIGINT)
     return 'Server Stopped'
 
 app.run(host='127.0.0.1', debug=True, port=5000)
