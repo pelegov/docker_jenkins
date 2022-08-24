@@ -50,6 +50,7 @@ pipeline {
                 script {
                     sh 'docker compose up -d'
                     sh 'docker compose ps'
+                    sh 'docker ps -a'
                 }    
             }
         }  
