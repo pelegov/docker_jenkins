@@ -1,7 +1,7 @@
 from flask import Flask, request
 from datetime import datetime
 import json
-from db_connector import post_value, get_value, delete_value, put_value
+#from db_connector import post_value, get_value, delete_value, put_value
 import os
 import signal
 
@@ -57,11 +57,15 @@ def current_time():
     return datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
 
+@app.route('/')
+def home():
+    return "Hello world!"
+
 @app.route('/stop_server')
 def stop_server():
-    os.kill(os.getpid(), signal.CTRL_C_EVENT)
+    os.kill(os.getpid(), signal.SIGINT)
     return 'Server Stopped'
 
-app.run(host='127.0.0.1', debug=True, port=5000)
+app.run(host='0.0.0.0', debug=True, port=5000)
 
 
