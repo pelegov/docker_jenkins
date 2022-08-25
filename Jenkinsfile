@@ -60,8 +60,8 @@ pipeline {
                 }
             }
         }
-        post ('clean env') {
-            always {
+        stage ('clean env') {
+            steps {
                 script {
                     sh 'docker compose down'
                     sh 'docker compose ps'
