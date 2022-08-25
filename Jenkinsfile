@@ -60,10 +60,12 @@ pipeline {
                 }
             }
         }
-        post {
+        post ('clean env') {
             always {
-                sh 'docker compose down'
-                sh 'docker compose ps'
+                script {
+                    sh 'docker compose down'
+                    sh 'docker compose ps'
+                }
             }
         }
     }
