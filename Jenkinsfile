@@ -52,6 +52,13 @@ pipeline {
                     sh 'docker compose ps'
                 }    
             }
-        }  
+        }
+        stage('test container') {
+            steps {
+                script {
+                    sh 'python3 docker_test.py'
+                }
+            }
+        }
     }
 }
